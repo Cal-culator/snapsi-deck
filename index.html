@@ -27,7 +27,7 @@
   --green: #ffffff;
   --green-dim: rgba(255, 255, 255, 0.2);
   --amber: #fbbf24;
-  --red: #fca5a5;
+  --red: #ffffff;
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --text-muted: rgba(255, 255, 255, 0.35);
@@ -366,7 +366,7 @@ body {
   display: block;
   width: 48px;
   height: 48px;
-  background: rgba(252,165,165,0.15);
+  background: rgba(255,255,255,0.1);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -447,9 +447,9 @@ body {
   transform: translateX(8px);
 }
 
-.pillar:nth-child(1):hover { border-color: var(--cyan); }
-.pillar:nth-child(2):hover { border-color: var(--green); }
-.pillar:nth-child(3):hover { border-color: var(--amber); }
+.pillar:nth-child(1):hover { border-color: rgba(255,255,255,0.25); }
+.pillar:nth-child(2):hover { border-color: rgba(255,255,255,0.25); }
+.pillar:nth-child(3):hover { border-color: rgba(255,255,255,0.25); }
 
 .pillar-header {
   display: flex;
@@ -464,9 +464,9 @@ body {
   border-radius: 50%;
 }
 
-.pillar:nth-child(1) .pillar-dot { background: var(--cyan); box-shadow: 0 0 8px var(--cyan-dim); }
-.pillar:nth-child(2) .pillar-dot { background: var(--green); box-shadow: 0 0 8px var(--green-dim); }
-.pillar:nth-child(3) .pillar-dot { background: var(--amber); box-shadow: 0 0 8px #f59e0b40; }
+.pillar:nth-child(1) .pillar-dot { background: #ffffff; box-shadow: 0 0 8px rgba(255,255,255,0.3); }
+.pillar:nth-child(2) .pillar-dot { background: #ffffff; box-shadow: 0 0 8px rgba(255,255,255,0.3); }
+.pillar:nth-child(3) .pillar-dot { background: #ffffff; box-shadow: 0 0 8px rgba(255,255,255,0.3); }
 
 .pillar h3 {
   font-size: 18px;
@@ -866,7 +866,7 @@ body {
   display: inline-block;
   padding: 2px 8px;
   border-radius: 4px;
-  background: rgba(252,165,165,0.15);
+  background: rgba(255,255,255,0.1);
   color: var(--red);
   font-size: 11px;
 }
