@@ -4,29 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SnapSi — From AI Model to Silicon in a Snap</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://www.agentloop.run">
 <style>
+@font-face { font-family: Styrene; src: url("https://www.agentloop.run/fonts/styrene/StyreneA-Regular-Trial-BF63f6cbd970ee9.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: Styrene; src: url("https://www.agentloop.run/fonts/styrene/StyreneA-Medium-Trial-BF63f6cbdb24b6d.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: Styrene; src: url("https://www.agentloop.run/fonts/styrene/StyreneA-Bold-Trial-BF63f6cbda1877f.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: Tiempos; src: url("https://www.agentloop.run/fonts/tiempos/TestTiemposText-Regular-BF66457a50cd521.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: Tiempos; src: url("https://www.agentloop.run/fonts/tiempos/TestTiemposText-RegularItalic-BF66457a50421c2.otf") format("opentype"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: Tiempos; src: url("https://www.agentloop.run/fonts/tiempos/TestTiemposText-Medium-BF66457a508489a.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: Tiempos; src: url("https://www.agentloop.run/fonts/tiempos/TestTiemposText-Bold-BF66457a4f03c40.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg-deep: #04080f;
-  --bg-surface: #0a1628;
-  --bg-card: #0f1d32;
-  --bg-card-hover: #142640;
-  --cyan: #0ce5f2;
-  --cyan-dim: #0ce5f240;
-  --cyan-glow: #0ce5f218;
-  --green: #10b981;
-  --green-dim: #10b98150;
-  --amber: #f59e0b;
-  --red: #ef4444;
-  --text-primary: #e8edf5;
-  --text-secondary: #8899b4;
-  --text-muted: #4a5e7a;
-  --font-display: 'Outfit', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --bg-deep: #0d1219;
+  --bg-surface: #111820;
+  --bg-card: #151d28;
+  --bg-card-hover: #1a2433;
+  --cyan: #5ba3d4;
+  --cyan-dim: rgba(91, 163, 212, 0.25);
+  --cyan-glow: rgba(91, 163, 212, 0.1);
+  --green: #5ba3d4;
+  --green-dim: rgba(91, 163, 212, 0.3);
+  --amber: #d4a94e;
+  --red: #e07a6e;
+  --text-primary: #c8d1da;
+  --text-secondary: #7a8a9a;
+  --text-muted: #4a5868;
+  --border: rgba(91, 163, 212, 0.08);
+  --border-hover: rgba(91, 163, 212, 0.18);
+  --font-display: 'Tiempos', Georgia, serif;
+  --font-mono: 'Styrene', system-ui, sans-serif;
   --trace-width: 1.5px;
 }
 
@@ -35,11 +43,11 @@ html {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   scrollbar-width: thin;
-  scrollbar-color: var(--cyan-dim) var(--bg-deep);
+  scrollbar-color: rgba(91, 163, 212, 0.25) var(--bg-deep);
 }
 
 body {
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   background: var(--bg-deep);
   color: var(--text-primary);
   line-height: 1.6;
@@ -155,12 +163,11 @@ body {
 
 /* === SECTION LABEL === */
 .section-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 12px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: rgba(91, 163, 212, 0.5);
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -171,24 +178,26 @@ body {
   display: block;
   width: 24px;
   height: 1px;
-  background: var(--cyan);
+  background: rgba(91, 163, 212, 0.3);
 }
 
 .section-title {
-  font-size: clamp(36px, 5vw, 56px);
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 32px;
-  letter-spacing: -1px;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 40px;
+  letter-spacing: 0;
 }
 
 .section-title span {
+  font-style: italic;
   color: var(--cyan);
 }
 
 /* === HERO SECTION === */
 #hero {
-  background: radial-gradient(ellipse at 70% 40%, #0a1e3d 0%, var(--bg-deep) 70%);
+  background: radial-gradient(ellipse at 70% 40%, #131c28 0%, var(--bg-deep) 70%);
 }
 
 .hero-circuit {
@@ -213,8 +222,8 @@ body {
 .hero-logo {
   font-family: var(--font-display);
   font-size: clamp(72px, 12vw, 140px);
-  font-weight: 900;
-  letter-spacing: -4px;
+  font-weight: 700;
+  letter-spacing: -2px;
   line-height: 1;
   margin-bottom: 16px;
   background: linear-gradient(135deg, #fff 0%, var(--cyan) 50%, var(--green) 100%);
@@ -314,7 +323,7 @@ body {
 
 /* === PROBLEM SECTION === */
 #problem {
-  background: linear-gradient(180deg, var(--bg-deep) 0%, #0a0f1a 100%);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, #0f1520 100%);
 }
 
 .pain-points {
@@ -327,8 +336,8 @@ body {
 
 .pain-card {
   background: var(--bg-card);
-  border: 1px solid #1a2a44;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
   padding: 32px 28px;
   position: relative;
   overflow: hidden;
@@ -408,7 +417,7 @@ body {
 
 /* === SOLUTION SECTION === */
 #solution {
-  background: linear-gradient(180deg, #0a0f1a 0%, var(--bg-deep) 100%);
+  background: linear-gradient(180deg, #0f1520 0%, var(--bg-deep) 100%);
 }
 
 .solution-grid {
@@ -427,8 +436,8 @@ body {
 
 .pillar {
   background: var(--bg-card);
-  border: 1px solid #1a2a44;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
   padding: 24px 28px;
   transition: border-color 0.3s, transform 0.3s;
 }
@@ -495,7 +504,7 @@ body {
 
 .flow-node.highlight {
   border-color: var(--cyan);
-  background: linear-gradient(135deg, var(--bg-card), #0a1e3d);
+  background: linear-gradient(135deg, var(--bg-card), #131c28);
   box-shadow: 0 0 30px var(--cyan-glow);
 }
 
@@ -542,7 +551,7 @@ body {
 
 /* === WHY NOW === */
 #whynow {
-  background: radial-gradient(ellipse at 30% 60%, #0a1e3d 0%, var(--bg-deep) 70%);
+  background: radial-gradient(ellipse at 30% 60%, #131c28 0%, var(--bg-deep) 70%);
 }
 
 .why-grid {
@@ -554,8 +563,8 @@ body {
 
 .why-card {
   background: var(--bg-card);
-  border: 1px solid #1a2a44;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
   padding: 28px;
   display: flex;
   gap: 16px;
@@ -588,7 +597,7 @@ body {
 
 /* === MARKET === */
 #market {
-  background: linear-gradient(180deg, var(--bg-deep) 0%, #0a0f1a 100%);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, #0f1520 100%);
 }
 
 .market-layout {
@@ -692,7 +701,7 @@ body {
   font-family: var(--font-mono);
   font-size: 12px;
   padding: 6px 14px;
-  border: 1px solid #1a2a44;
+  border: 1px solid var(--border);
   border-radius: 20px;
   color: var(--text-secondary);
   background: var(--bg-card);
@@ -707,7 +716,7 @@ body {
 
 /* === COMPETITIVE === */
 #competitive {
-  background: linear-gradient(180deg, #0a0f1a 0%, var(--bg-deep) 100%);
+  background: linear-gradient(180deg, #0f1520 0%, var(--bg-deep) 100%);
 }
 
 .comp-layout {
@@ -826,7 +835,7 @@ body {
   font-weight: 500;
 }
 
-.comp-table tr:hover td { background: #0a1628; }
+.comp-table tr:hover td { background: var(--bg-surface); }
 
 .comp-table .snapsi-col {
   color: var(--green);
@@ -863,7 +872,7 @@ body {
 
 /* === BUSINESS MODEL === */
 #business {
-  background: radial-gradient(ellipse at 70% 30%, #0a1e3d 0%, var(--bg-deep) 70%);
+  background: radial-gradient(ellipse at 70% 30%, #131c28 0%, var(--bg-deep) 70%);
 }
 
 .biz-grid {
@@ -875,8 +884,8 @@ body {
 
 .biz-card {
   background: var(--bg-card);
-  border: 1px solid #1a2a44;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
   padding: 32px 28px;
   position: relative;
   overflow: hidden;
@@ -954,7 +963,7 @@ body {
 
 /* === GTM === */
 #gtm {
-  background: linear-gradient(180deg, var(--bg-deep) 0%, #0a0f1a 100%);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, #0f1520 100%);
 }
 
 .gtm-phases {
@@ -966,8 +975,8 @@ body {
 
 .phase-card {
   background: var(--bg-card);
-  border: 1px solid #1a2a44;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
   padding: 36px 32px;
   position: relative;
 }
@@ -1031,7 +1040,7 @@ body {
 
 /* === TRACTION === */
 #traction {
-  background: linear-gradient(180deg, #0a0f1a 0%, var(--bg-deep) 100%);
+  background: linear-gradient(180deg, #0f1520 0%, var(--bg-deep) 100%);
 }
 
 .traction-layout {
@@ -1104,8 +1113,8 @@ body {
 /* Revenue chart */
 .revenue-chart {
   background: var(--bg-card);
-  border: 1px solid #1a2a44;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
   padding: 32px;
 }
 
@@ -1165,8 +1174,8 @@ body {
 
 .signal-card {
   background: var(--bg-card);
-  border: 1px solid #1a2a44;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
   padding: 28px 24px;
   transition: border-color 0.3s, transform 0.3s;
 }
@@ -1228,7 +1237,7 @@ body {
 
 /* === TEAM === */
 #team {
-  background: radial-gradient(ellipse at 50% 50%, #0a1e3d 0%, var(--bg-deep) 70%);
+  background: radial-gradient(ellipse at 50% 50%, #131c28 0%, var(--bg-deep) 70%);
 }
 
 .team-grid {
@@ -1240,8 +1249,8 @@ body {
 
 .team-card {
   background: var(--bg-card);
-  border: 1px solid #1a2a44;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
   padding: 32px 28px;
   text-align: center;
   transition: all 0.3s;
@@ -1265,7 +1274,7 @@ body {
   border: 2px solid #1a2a44;
 }
 
-.team-card:nth-child(1) .team-avatar { background: linear-gradient(135deg, #0a1e3d, var(--bg-card)); color: var(--cyan); border-color: var(--cyan-dim); }
+.team-card:nth-child(1) .team-avatar { background: linear-gradient(135deg, #131c28, var(--bg-card)); color: var(--cyan); border-color: var(--cyan-dim); }
 .team-card:nth-child(2) .team-avatar { background: linear-gradient(135deg, #0a2a1a, var(--bg-card)); color: var(--green); border-color: var(--green-dim); }
 .team-card:nth-child(3) .team-avatar { background: linear-gradient(135deg, #1a1500, var(--bg-card)); color: var(--amber); border-color: #f59e0b40; }
 
@@ -1316,7 +1325,7 @@ body {
 
 .advisor-card {
   background: var(--bg-card);
-  border: 1px solid #1a2a44;
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 20px 24px;
   display: flex;
@@ -1358,7 +1367,7 @@ body {
 
 /* === THE ASK === */
 #ask {
-  background: linear-gradient(180deg, var(--bg-deep) 0%, #0a0f1a 100%);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, #0f1520 100%);
 }
 
 .ask-hero {
@@ -1391,8 +1400,8 @@ body {
 
 .allocation-chart {
   background: var(--bg-card);
-  border: 1px solid #1a2a44;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
   padding: 32px;
 }
 
@@ -1426,7 +1435,7 @@ body {
 .alloc-bar-track {
   flex: 1;
   height: 24px;
-  background: #0a1628;
+  background: var(--bg-surface);
   border-radius: 4px;
   overflow: hidden;
   position: relative;
@@ -1448,8 +1457,8 @@ body {
 
 .team-plan {
   background: var(--bg-card);
-  border: 1px solid #1a2a44;
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
   padding: 32px;
 }
 
@@ -1529,7 +1538,7 @@ body {
 
 /* === VISION === */
 #vision {
-  background: radial-gradient(ellipse at 50% 40%, #0a1e3d 0%, var(--bg-deep) 70%);
+  background: radial-gradient(ellipse at 50% 40%, #131c28 0%, var(--bg-deep) 70%);
 }
 
 .vision-content {
@@ -1573,7 +1582,7 @@ body {
 
 .vflow-node:nth-child(3) {
   border-color: var(--cyan);
-  background: linear-gradient(135deg, var(--bg-card), #0a1e3d);
+  background: linear-gradient(135deg, var(--bg-card), #131c28);
   box-shadow: 0 0 30px var(--cyan-glow);
 }
 
@@ -1619,7 +1628,7 @@ body {
 
 .exit-card {
   background: var(--bg-card);
-  border: 1px solid #1a2a44;
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 24px;
   transition: border-color 0.3s;
@@ -1703,7 +1712,7 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.025;
+  opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
