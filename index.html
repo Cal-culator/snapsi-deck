@@ -1542,110 +1542,143 @@ body {
   background: radial-gradient(ellipse at 50% 40%, #1a3050 0%, var(--bg-deep) 70%);
 }
 
-.vision-content {
+.vision-top {
   max-width: 800px;
+  margin-bottom: 56px;
 }
 
-.vision-statement {
-  font-size: clamp(24px, 3.5vw, 40px);
-  font-weight: 300;
-  line-height: 1.4;
-  margin-bottom: 48px;
-  letter-spacing: -0.5px;
+.vision-statement-v2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 20px;
 }
 
-.vision-statement strong {
+.vision-statement-v2 strong {
   font-weight: 700;
-  color: var(--cyan);
 }
 
-.vision-flow {
+.vision-sub-v2 {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+.vision-center {
+  margin-bottom: 56px;
+}
+
+.vision-pipeline {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0;
-  margin: 48px 0;
 }
 
-.vflow-node {
-  padding: 16px 28px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  text-align: center;
-  border: 1.5px solid;
-}
-
-.vflow-node:nth-child(1) {
-  border-color: rgba(255,255,255,0.12);
+.vp-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 36px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
   background: var(--bg-card);
+  min-width: 160px;
+  transition: all 0.3s;
 }
 
-.vflow-node:nth-child(3) {
-  border-color: rgba(255,255,255,0.4);
-  background: rgba(255,255,255,0.12);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+.vp-step:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
 }
 
-.vflow-node:nth-child(3) .vflow-sub {
+.vp-step-highlight {
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.vp-step-highlight:hover {
+  border-color: rgba(255,255,255,0.35);
+}
+
+.vp-icon {
+  margin-bottom: 4px;
+}
+
+.vp-label {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.vp-detail {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--cyan);
-  margin-top: 4px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
 }
 
-.vflow-node:nth-child(5) {
-  border-color: rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.08);
-}
-
-.vflow-arrow {
-  width: 48px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--cyan-dim), var(--cyan));
-  position: relative;
+.vp-connector {
   flex-shrink: 0;
+  padding: 0 8px;
 }
 
-.vflow-arrow::after {
-  content: '';
-  position: absolute;
-  right: -4px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 6px solid var(--cyan);
+.vision-exit-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
 }
 
 .exit-paths {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  margin-top: 48px;
 }
 
 .exit-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 24px;
-  transition: border-color 0.3s;
+  border-radius: 16px;
+  padding: 28px;
+  transition: border-color 0.3s, transform 0.3s;
+  position: relative;
 }
 
-.exit-card:hover { border-color: var(--cyan); }
+.exit-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.exit-card-num {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  opacity: 0.06;
+  line-height: 1;
+}
 
 .exit-card h4 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 6px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 8px;
 }
 
 .exit-card p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 /* === FOOTER / CTA === */
@@ -1689,16 +1722,9 @@ body {
   .flow-split-arrow { width: 2px; height: 32px; margin-top: 0; }
   .advisor-row { flex-direction: column; align-items: center; }
   .metrics-row { flex-wrap: wrap; gap: 24px; }
-  .vision-flow { flex-direction: column; }
-  .vflow-arrow { width: 2px; height: 32px; }
-  .vflow-arrow::after {
-    right: auto; top: auto; bottom: -4px;
-    left: 50%; transform: translateX(-50%);
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 6px solid var(--cyan);
-    border-bottom: none;
-  }
+  .vision-pipeline { flex-direction: column; gap: 16px; }
+  .vp-connector { display: none; }
+  .vp-step { min-width: auto; width: 100%; }
 }
 
 @media (max-width: 600px) {
@@ -2404,30 +2430,30 @@ body {
           <div class="alloc-item">
             <div class="alloc-label">Engineering & Product</div>
             <div class="alloc-bar-track">
-              <div class="alloc-bar-fill" data-width="70" style="width:0%;background:var(--cyan);"></div>
+              <div class="alloc-bar-fill" data-width="70" style="width:0%;background:rgba(255,255,255,0.85);"></div>
             </div>
-            <div class="alloc-pct" style="color:var(--cyan);">70%</div>
+            <div class="alloc-pct">70%</div>
           </div>
           <div class="alloc-item">
             <div class="alloc-label">Customer Pilots & GTM</div>
             <div class="alloc-bar-track">
-              <div class="alloc-bar-fill" data-width="10" style="width:0%;background:var(--green);"></div>
+              <div class="alloc-bar-fill" data-width="10" style="width:0%;background:rgba(255,255,255,0.6);"></div>
             </div>
-            <div class="alloc-pct" style="color:var(--green);">10%</div>
+            <div class="alloc-pct">10%</div>
           </div>
           <div class="alloc-item">
             <div class="alloc-label">Infrastructure & Tooling</div>
             <div class="alloc-bar-track">
-              <div class="alloc-bar-fill" data-width="10" style="width:0%;background:var(--amber);"></div>
+              <div class="alloc-bar-fill" data-width="10" style="width:0%;background:rgba(255,255,255,0.45);"></div>
             </div>
-            <div class="alloc-pct" style="color:var(--amber);">10%</div>
+            <div class="alloc-pct">10%</div>
           </div>
           <div class="alloc-item">
             <div class="alloc-label">Legal, IP, Buffer</div>
             <div class="alloc-bar-track">
-              <div class="alloc-bar-fill" data-width="10" style="width:0%;background:var(--text-muted);"></div>
+              <div class="alloc-bar-fill" data-width="10" style="width:0%;background:rgba(255,255,255,0.3);"></div>
             </div>
-            <div class="alloc-pct" style="color:var(--text-muted);">10%</div>
+            <div class="alloc-pct">10%</div>
           </div>
         </div>
       </div>
@@ -2457,33 +2483,57 @@ body {
     <div class="reveal">
       <div class="section-label">11 / Vision</div>
     </div>
-    <div class="vision-content">
-      <div class="vision-statement reveal reveal-delay-1">
-        Make custom AI silicon as <strong>easy and reliable</strong> as software. SnapSi is defining the <strong>compiler layer</strong> for AI-to-silicon.
+    <div class="vision-top reveal reveal-delay-1">
+      <div class="vision-statement-v2">
+        Make custom AI silicon as <strong>easy and reliable</strong> as software.
       </div>
-      <div class="vision-flow reveal reveal-delay-2">
-        <div class="vflow-node">AI Model</div>
-        <div class="vflow-arrow"></div>
-        <div class="vflow-node">
-          Compiler Layer
-          <div class="vflow-sub">SnapSi</div>
+      <div class="vision-sub-v2">
+        SnapSi is defining the compiler layer for AI-to-silicon. Long-term, custom silicon becomes the standard way AI is deployed &mdash; and SnapSi becomes core infrastructure in the hardware stack.
+      </div>
+    </div>
+    <div class="vision-center reveal reveal-delay-2">
+      <div class="vision-pipeline">
+        <div class="vp-step">
+          <div class="vp-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="4" width="20" height="20" rx="4" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><path d="M10 14h8M14 10v8" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="vp-label">AI Model</div>
+          <div class="vp-detail">PyTorch / TensorFlow</div>
         </div>
-        <div class="vflow-arrow"></div>
-        <div class="vflow-node">Custom Silicon</div>
-      </div>
-      <div class="reveal reveal-delay-3" style="margin-bottom: 40px;">
-        <div class="callout">
-          Long-term, custom silicon becomes the standard way AI is deployed. SnapSi becomes core infrastructure in the AI hardware stack.
+        <div class="vp-connector">
+          <svg width="60" height="2"><line x1="0" y1="1" x2="60" y2="1" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4"/></svg>
+        </div>
+        <div class="vp-step vp-step-highlight">
+          <div class="vp-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 8l8-4 8 4v12l-8 4-6-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4v12" stroke="rgba(255,255,255,0.4)" stroke-width="1"/><path d="M6 8l8 4 8-4" stroke="rgba(255,255,255,0.4)" stroke-width="1"/></svg>
+          </div>
+          <div class="vp-label">SnapSi</div>
+          <div class="vp-detail">Compiler Layer</div>
+        </div>
+        <div class="vp-connector">
+          <svg width="60" height="2"><line x1="0" y1="1" x2="60" y2="1" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4"/></svg>
+        </div>
+        <div class="vp-step">
+          <div class="vp-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="8" y="8" width="12" height="12" rx="2" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><line x1="8" y1="14" x2="4" y2="14" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/><line x1="24" y1="14" x2="20" y2="14" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/><line x1="14" y1="8" x2="14" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/><line x1="14" y1="24" x2="14" y2="20" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/></svg>
+          </div>
+          <div class="vp-label">Custom Silicon</div>
+          <div class="vp-detail">FPGA & ASIC</div>
         </div>
       </div>
-      <div class="exit-paths reveal reveal-delay-4">
+    </div>
+    <div class="vision-exits reveal reveal-delay-3">
+      <div class="vision-exit-title">Exit Paths</div>
+      <div class="exit-paths">
         <div class="exit-card">
-          <h4>Acquisition Path</h4>
-          <p>Strategic acquisition by EDA, FPGA, or semiconductor companies seeking AI-to-hardware capabilities.</p>
+          <div class="exit-card-num">01</div>
+          <h4>Strategic Acquisition</h4>
+          <p>By EDA, FPGA, or semiconductor companies seeking AI-to-hardware capabilities.</p>
         </div>
         <div class="exit-card">
+          <div class="exit-card-num">02</div>
           <h4>Standalone Platform</h4>
-          <p>Enterprise software and IP platform with recurring revenue, serving the growing custom silicon market.</p>
+          <p>Enterprise software and IP platform with recurring revenue in the custom silicon market.</p>
         </div>
       </div>
     </div>
