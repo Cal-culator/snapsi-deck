@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SnapSi — From AI Model to Silicon in a Snap</title>
+<meta name="description" content="SnapSi converts AI models directly into hardware (SystemC) — ready for FPGA/ASIC design. Automated, effective, reliable.">
+<meta property="og:title" content="SnapSi — From AI Model to Silicon in a Snap">
+<meta property="og:description" content="A disruptive tool that converts AI models directly into hardware. Automated. Effective. Reliable.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://snapsi-deck.vercel.app">
+<meta property="og:image" content="https://snapsi-deck.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SnapSi — From AI Model to Silicon in a Snap">
+<meta name="twitter:description" content="A disruptive tool that converts AI models directly into hardware. Automated. Effective. Reliable.">
+<meta name="twitter:image" content="https://snapsi-deck.vercel.app/og.png">
 <link rel="preconnect" href="https://www.agentloop.run">
 <style>
 @font-face { font-family: Styrene; src: url("https://www.agentloop.run/fonts/styrene/StyreneA-Regular-Trial-BF63f6cbd970ee9.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
@@ -1239,8 +1251,65 @@ body {
   line-height: 1.5;
 }
 
+.roadmap-h {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.roadmap-step {
+  flex: 1;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.roadmap-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.25);
+  background: var(--bg-deep);
+  margin: 0 auto 12px;
+  position: relative;
+}
+
+.roadmap-dot.done::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fbbf24;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.roadmap-step h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.roadmap-step p {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.roadmap-line {
+  width: 60px;
+  height: 2px;
+  background: rgba(255,255,255,0.12);
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+
 @media (max-width: 900px) {
   .traction-signals { grid-template-columns: 1fr; }
+  .roadmap-h { flex-direction: column; align-items: center; }
+  .roadmap-line { width: 2px; height: 24px; }
+  .roadmap-step { padding: 0; }
 }
 
 /* === TEAM === */
@@ -2350,32 +2419,26 @@ body {
         <div class="signal-desc">Early engagement with Intel, Siemens, Tektronix</div>
       </div>
     </div>
-    <!-- Timeline + Chart row -->
-    <div class="traction-layout">
-      <div class="reveal reveal-delay-2">
-        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;">Product Roadmap</div>
-        <div class="milestones">
-          <div class="milestone">
-            <div class="milestone-dot done"></div>
-            <div>
-              <h4>Proof-of-concept completed</h4>
-              <p>Core technology validated end-to-end</p>
-            </div>
-          </div>
-          <div class="milestone">
-            <div class="milestone-dot"></div>
-            <div>
-              <h4>MVP in 6 months</h4>
-              <p>Core compilation pipeline functional</p>
-            </div>
-          </div>
-          <div class="milestone">
-            <div class="milestone-dot"></div>
-            <div>
-              <h4>Production release in 12-18 months</h4>
-              <p>Full FPGA & ASIC target support</p>
-            </div>
-          </div>
+    <!-- Horizontal Roadmap -->
+    <div class="reveal reveal-delay-2">
+      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;">Product Roadmap</div>
+      <div class="roadmap-h">
+        <div class="roadmap-step">
+          <div class="roadmap-dot done"></div>
+          <h4>POC completed</h4>
+          <p>Core technology validated end-to-end</p>
+        </div>
+        <div class="roadmap-line"></div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot"></div>
+          <h4>MVP in 6 months</h4>
+          <p>Core compilation pipeline functional</p>
+        </div>
+        <div class="roadmap-line"></div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot"></div>
+          <h4>Production in 12-18 months</h4>
+          <p>Full FPGA & ASIC target support</p>
         </div>
       </div>
     </div>
@@ -2415,28 +2478,28 @@ body {
           <div class="alloc-item">
             <div class="alloc-label">Engineering & Product</div>
             <div class="alloc-bar-track">
-              <div class="alloc-bar-fill" data-width="70" style="width:0%;background:rgba(255,255,255,0.85);"></div>
+              <div class="alloc-bar-fill" data-width="100" style="width:0%;background:rgba(255,255,255,0.85);"></div>
             </div>
             <div class="alloc-pct">70%</div>
           </div>
           <div class="alloc-item">
             <div class="alloc-label">Customer Pilots & GTM</div>
             <div class="alloc-bar-track">
-              <div class="alloc-bar-fill" data-width="10" style="width:0%;background:rgba(255,255,255,0.6);"></div>
+              <div class="alloc-bar-fill" data-width="100" style="width:0%;background:rgba(255,255,255,0.6);"></div>
             </div>
             <div class="alloc-pct">10%</div>
           </div>
           <div class="alloc-item">
             <div class="alloc-label">Infrastructure & Tooling</div>
             <div class="alloc-bar-track">
-              <div class="alloc-bar-fill" data-width="10" style="width:0%;background:rgba(255,255,255,0.45);"></div>
+              <div class="alloc-bar-fill" data-width="100" style="width:0%;background:rgba(255,255,255,0.45);"></div>
             </div>
             <div class="alloc-pct">10%</div>
           </div>
           <div class="alloc-item">
             <div class="alloc-label">Legal, IP, Buffer</div>
             <div class="alloc-bar-track">
-              <div class="alloc-bar-fill" data-width="10" style="width:0%;background:rgba(255,255,255,0.3);"></div>
+              <div class="alloc-bar-fill" data-width="100" style="width:0%;background:rgba(255,255,255,0.3);"></div>
             </div>
             <div class="alloc-pct">10%</div>
           </div>
