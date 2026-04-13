@@ -1513,16 +1513,17 @@ body {
 .alloc-label {
   font-size: 13px;
   color: var(--text-secondary);
-  min-width: 160px;
+  flex: 1;
 }
 
 .alloc-bar-track {
-  flex: 1;
+  width: 280px;
   height: 24px;
   background: var(--bg-surface);
   border-radius: 4px;
   overflow: hidden;
   position: relative;
+  flex-shrink: 0;
 }
 
 .alloc-bar-fill {
@@ -1833,7 +1834,8 @@ body {
   .traction-signals { gap: 12px; }
   .signal-amount { font-size: 28px; }
   .team-card { padding: 24px 20px; }
-  .alloc-label { min-width: 120px; font-size: 12px; }
+  .alloc-label { font-size: 12px; }
+  .alloc-bar-track { width: 180px; }
   .flow-diagram { margin-top: 24px; }
   .flow-node { width: 200px; padding: 12px 20px; font-size: 13px; }
   .quadrant { max-width: 100%; }
@@ -1846,7 +1848,8 @@ body {
   .phase-card { padding: 24px 20px; }
   .phase-card ul { gap: 8px; }
   .phase-card li { font-size: 13px; }
-  .alloc-label { min-width: 100px; font-size: 11px; }
+  .alloc-label { font-size: 11px; }
+  .alloc-bar-track { width: 120px; }
   .alloc-pct { font-size: 12px; }
   .exit-paths { grid-template-columns: 1fr; }
   .vision-statement-v2 { font-size: clamp(22px, 6vw, 32px); }
