@@ -113,14 +113,16 @@ body {
 
 /* === SECTIONS === */
 .slide {
+  height: 100vh;
   min-height: 100vh;
+  max-height: 100vh;
   scroll-snap-align: start;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 80px 60px;
+  padding: 60px 60px;
 }
 
 .slide-inner {
@@ -1724,8 +1726,17 @@ body {
 .cta-contact a:hover { border-color: var(--cyan); }
 
 /* === RESPONSIVE === */
+@media (max-width: 1100px) {
+  .slide { padding: 48px 40px; }
+  .solution-grid, .comp-layout, .traction-layout, .market-layout {
+    gap: 32px;
+  }
+  .section-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 28px; }
+}
+
 @media (max-width: 900px) {
-  .slide { padding: 60px 24px; }
+  .slide { padding: 40px 24px; overflow-y: auto; }
+  .slide-inner { padding-top: 20px; padding-bottom: 20px; }
   .pain-points, .solution-grid, .market-layout, .comp-layout, .biz-grid, .gtm-phases, .traction-layout, .ask-grid, .team-grid, .exit-paths, .why-grid {
     grid-template-columns: 1fr;
   }
@@ -1733,17 +1744,43 @@ body {
   .hero-chip { display: none; }
   .flow-split { flex-direction: column; align-items: center; }
   .flow-split-arrow { width: 2px; height: 32px; margin-top: 0; }
-  .advisor-row { flex-direction: column; align-items: center; }
-  .metrics-row { flex-wrap: wrap; gap: 24px; }
+  .metrics-row { flex-wrap: wrap; gap: 20px; }
   .vision-pipeline { flex-direction: column; gap: 16px; }
   .vp-connector { display: none; }
   .vp-step { min-width: auto; width: 100%; }
+  .hero-logo { font-size: clamp(48px, 14vw, 96px); }
+  .hero-tagline { font-size: clamp(16px, 4vw, 24px); margin-bottom: 32px; }
+  .section-title { font-size: clamp(1.6rem, 5vw, 2.4rem); margin-bottom: 24px; }
+  .pain-points { gap: 12px; margin-top: 24px; margin-bottom: 32px; }
+  .pain-card { padding: 24px 20px; }
+  .comp-table { font-size: 11px; }
+  .comp-table th, .comp-table td { padding: 8px 6px; }
+  .biz-grid { gap: 16px; }
+  .biz-card { padding: 24px 20px; }
+  .biz-price { font-size: 22px; }
+  .tam-value { font-size: 20px; }
+  .ask-amount { font-size: clamp(36px, 10vw, 60px); }
+  .metric-value { font-size: 22px; }
+  .traction-signals { gap: 12px; }
+  .signal-amount { font-size: 28px; }
+  .team-card { padding: 24px 20px; }
+  .alloc-label { min-width: 120px; font-size: 12px; }
+  .flow-diagram { margin-top: 24px; }
+  .flow-node { width: 200px; padding: 12px 20px; font-size: 13px; }
+  .quadrant { max-width: 100%; }
 }
 
 @media (max-width: 600px) {
-  .slide { padding: 48px 16px; }
-  .pain-points { gap: 16px; }
-  .biz-grid { gap: 16px; }
+  .slide { padding: 32px 16px; }
+  .pain-points { grid-template-columns: 1fr; }
+  .hero-meta { flex-direction: column; gap: 8px; }
+  .phase-card { padding: 24px 20px; }
+  .phase-card ul { gap: 8px; }
+  .phase-card li { font-size: 13px; }
+  .alloc-label { min-width: 100px; font-size: 11px; }
+  .alloc-pct { font-size: 12px; }
+  .exit-paths { grid-template-columns: 1fr; }
+  .vision-statement-v2 { font-size: clamp(22px, 6vw, 32px); }
 }
 
 /* === NOISE OVERLAY === */
@@ -1823,7 +1860,38 @@ body {
       <div class="hero-meta">
         <span>Seed Round 2026</span>
         <span style="color: var(--text-muted);">/</span>
-        <a href="mailto:lizhong@snapsi.ai">lizhong@snapsi.ai</a>
+        <a href="mailto:calvin@snapsi.ai">calvin@snapsi.ai</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TEAM ==================== -->
+<section class="slide" id="team">
+  <div class="grid-bg"></div>
+  <div class="slide-inner">
+    <div class="reveal">
+      <div class="section-label">01 / Team</div>
+      <h2 class="section-title">World-class <span>expertise</span><br>in AI and silicon</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-avatar"><img src="img/lizhong.jpeg" alt="Lizhong Chen"></div>
+        <h3>Lizhong Chen</h3>
+        <div class="team-role">Co-founder & CEO</div>
+        <p class="team-bio">Expert on AI and computer architecture. <strong>Professor at Oregon State University</strong> with <strong>$30M+ in research funding</strong>. <strong>IEEE HPCA Hall of Fame</strong> inductee. <strong>NSF CAREER Awardee</strong>.</p>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-avatar"><img src="img/raymond.jpeg" alt="Raymond Baartmans"></div>
+        <h3>Raymond Baartmans</h3>
+        <div class="team-role">Co-founder & CTO</div>
+        <p class="team-bio">Expert on AI hardware accelerators. <strong>PhD candidate</strong> specializing in high-level synthesis. Experienced developer for <strong>HLS, MLIR, and design automation</strong> for FPGA and ASIC.</p>
+      </div>
+      <div class="team-card reveal reveal-delay-3">
+        <div class="team-avatar"><img src="img/calvin.jpg" alt="Calvin Chen"></div>
+        <h3>Calvin Chen</h3>
+        <div class="team-role">Co-founder & VP of Business</div>
+        <p class="team-bio">Led <strong>growth and business operations at 4 startups</strong>, driving go-to-market strategy, enterprise sales, and partnership development across deep tech verticals.</p>
       </div>
     </div>
   </div>
@@ -1834,7 +1902,7 @@ body {
   <div class="grid-bg"></div>
   <div class="slide-inner">
     <div class="reveal">
-      <div class="section-label">01 / The Problem</div>
+      <div class="section-label">02 / The Problem</div>
       <h2 class="section-title">Hardware can't keep up<br>with <span>AI innovation</span></h2>
     </div>
     <div class="pain-points">
@@ -1865,7 +1933,7 @@ body {
   <div class="grid-bg"></div>
   <div class="slide-inner">
     <div class="reveal">
-      <div class="section-label">02 / Our Solution</div>
+      <div class="section-label">03 / Our Solution</div>
       <h2 class="section-title">AI models to hardware,<br><span>automatically</span></h2>
     </div>
     <div class="solution-grid">
@@ -1931,7 +1999,7 @@ body {
   <div class="grid-bg"></div>
   <div class="slide-inner">
     <div class="reveal">
-      <div class="section-label">03 / Why Now</div>
+      <div class="section-label">04 / Why Now</div>
       <h2 class="section-title">A perfect storm for<br><span>AI hardware automation</span></h2>
     </div>
     <div class="why-grid">
@@ -1975,7 +2043,7 @@ body {
   <div class="grid-bg"></div>
   <div class="slide-inner">
     <div class="reveal">
-      <div class="section-label">04 / Market Opportunity</div>
+      <div class="section-label">05 / Market Opportunity</div>
       <h2 class="section-title">A <span style="color:#fbbf24">$11.4B</span> market<br>growing at <span style="color:#fbbf24">35% CAGR</span></h2>
     </div>
     <div class="market-layout">
@@ -2044,7 +2112,7 @@ body {
   <div class="grid-bg"></div>
   <div class="slide-inner">
     <div class="reveal">
-      <div class="section-label">05 / Competitive Advantage</div>
+      <div class="section-label">06 / Competitive Advantage</div>
       <h2 class="section-title">The only tool with <span>all three</span>:<br>automated, effective, reliable</h2>
     </div>
     <div class="comp-layout">
@@ -2173,7 +2241,7 @@ body {
   <div class="grid-bg"></div>
   <div class="slide-inner">
     <div class="reveal">
-      <div class="section-label">06 / Business Model</div>
+      <div class="section-label">07 / Business Model</div>
       <h2 class="section-title">Enterprise software with<br><span>expansion built in</span></h2>
     </div>
     <div class="biz-grid">
@@ -2224,7 +2292,7 @@ body {
   <div class="grid-bg"></div>
   <div class="slide-inner">
     <div class="reveal">
-      <div class="section-label">07 / Go-to-Market</div>
+      <div class="section-label">08 / Go-to-Market</div>
       <h2 class="section-title">Founder-led sales,<br><span>then scale</span></h2>
     </div>
     <div class="gtm-phases">
@@ -2261,7 +2329,7 @@ body {
   <div class="grid-bg"></div>
   <div class="slide-inner">
     <div class="reveal">
-      <div class="section-label">08 / Traction & Timeline</div>
+      <div class="section-label">09 / Traction & Timeline</div>
       <h2 class="section-title">Proof points and<br><span>momentum</span></h2>
     </div>
     <!-- Signal cards row -->
@@ -2310,84 +2378,6 @@ body {
           </div>
         </div>
       </div>
-      <div class="reveal reveal-delay-3">
-        <div class="revenue-chart">
-          <div class="chart-title">5-Year Revenue Projection</div>
-          <svg class="chart-svg" viewBox="0 0 400 220">
-            <defs>
-              <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.2"/>
-                <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <!-- Grid lines -->
-            <line x1="60" y1="30" x2="380" y2="30" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-            <line x1="60" y1="70" x2="380" y2="70" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-            <line x1="60" y1="110" x2="380" y2="110" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-            <line x1="60" y1="150" x2="380" y2="150" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-            <line x1="60" y1="190" x2="380" y2="190" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-            <!-- Y-axis labels -->
-            <text class="chart-label" x="50" y="34" text-anchor="end">$30M</text>
-            <text class="chart-label" x="50" y="74" text-anchor="end">$24M</text>
-            <text class="chart-label" x="50" y="114" text-anchor="end">$12M</text>
-            <text class="chart-label" x="50" y="154" text-anchor="end">$6M</text>
-            <text class="chart-label" x="50" y="194" text-anchor="end">$0</text>
-            <!-- X-axis labels -->
-            <text class="chart-label" x="100" y="210" text-anchor="middle">Y1</text>
-            <text class="chart-label" x="170" y="210" text-anchor="middle">Y2</text>
-            <text class="chart-label" x="240" y="210" text-anchor="middle">Y3</text>
-            <text class="chart-label" x="310" y="210" text-anchor="middle">Y4</text>
-            <text class="chart-label" x="380" y="210" text-anchor="middle">Y5</text>
-            <!-- Area -->
-            <path class="chart-area" d="M100,188 L170,177 L240,150 L310,110 L380,70 L380,190 L100,190 Z"/>
-            <!-- Line -->
-            <polyline class="chart-line" points="100,188 170,177 240,150 310,110 380,70"/>
-            <!-- Dots and values -->
-            <circle class="chart-dot" cx="100" cy="188" r="4"/>
-            <text class="chart-value" x="100" y="182" text-anchor="middle">$0.3M</text>
-            <circle class="chart-dot" cx="170" cy="177" r="4"/>
-            <text class="chart-value" x="170" y="171" text-anchor="middle">$2M</text>
-            <circle class="chart-dot" cx="240" cy="150" r="4"/>
-            <text class="chart-value" x="240" y="144" text-anchor="middle">$6M</text>
-            <circle class="chart-dot" cx="310" cy="110" r="4"/>
-            <text class="chart-value" x="310" y="104" text-anchor="middle">$12M</text>
-            <circle class="chart-dot" cx="380" cy="70" r="4"/>
-            <text class="chart-value" x="375" y="64" text-anchor="end">$24M</text>
-          </svg>
-          <div style="text-align:right;font-family:var(--font-mono);font-size:10px;color:var(--text-muted);margin-top:8px;">Illustrative projection</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== TEAM ==================== -->
-<section class="slide" id="team">
-  <div class="grid-bg"></div>
-  <div class="slide-inner">
-    <div class="reveal">
-      <div class="section-label">09 / Team</div>
-      <h2 class="section-title">World-class <span>expertise</span><br>in AI and silicon</h2>
-    </div>
-    <div class="team-grid">
-      <div class="team-card reveal reveal-delay-1">
-        <div class="team-avatar"><img src="img/lizhong.jpeg" alt="Lizhong Chen"></div>
-        <h3>Lizhong Chen</h3>
-        <div class="team-role">Co-founder & CEO</div>
-        <p class="team-bio">Expert on AI and computer architecture. <strong>Professor at Oregon State University</strong> with <strong>$30M+ in research funding</strong>. <strong>IEEE HPCA Hall of Fame</strong> inductee. <strong>NSF CAREER Awardee</strong>.</p>
-      </div>
-      <div class="team-card reveal reveal-delay-2">
-        <div class="team-avatar"><img src="img/raymond.jpeg" alt="Raymond Baartmans"></div>
-        <h3>Raymond Baartmans</h3>
-        <div class="team-role">Co-founder & CTO</div>
-        <p class="team-bio">Expert on AI hardware accelerators. <strong>PhD candidate</strong> specializing in high-level synthesis. Experienced developer for <strong>HLS, MLIR, and design automation</strong> for FPGA and ASIC.</p>
-      </div>
-      <div class="team-card reveal reveal-delay-3">
-        <div class="team-avatar"><img src="img/calvin.jpg" alt="Calvin Chen"></div>
-        <h3>Calvin Chen</h3>
-        <div class="team-role">Co-founder & VP of Business</div>
-        <p class="team-bio">Led <strong>growth and business operations at 4 startups</strong>, driving go-to-market strategy, enterprise sales, and partnership development across deep tech verticals.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -2398,6 +2388,7 @@ body {
   <div class="slide-inner">
     <div class="reveal">
       <div class="section-label">10 / The Ask</div>
+
     </div>
     <div class="ask-hero reveal reveal-delay-1">
       <div class="ask-amount">$2.5M Seed</div>
@@ -2476,6 +2467,7 @@ body {
   <div class="slide-inner">
     <div class="reveal">
       <div class="section-label">11 / Vision</div>
+
     </div>
     <div class="vision-top reveal reveal-delay-1">
       <div class="vision-statement-v2">
@@ -2535,7 +2527,7 @@ body {
 </section>
 
 <!-- ==================== CTA ==================== -->
-<section class="slide" id="contact" style="min-height: 60vh;">
+<section class="slide" id="contact">
   <div class="grid-bg"></div>
   <div class="slide-inner" style="text-align: center;">
     <div class="reveal">
@@ -2546,7 +2538,7 @@ body {
     </div>
     <div class="reveal reveal-delay-2">
       <div class="cta-contact">
-        Lizhong Chen &mdash; <a href="mailto:lizhong@snapsi.ai">lizhong@snapsi.ai</a>
+        Calvin Chen &mdash; <a href="mailto:calvin@snapsi.ai">calvin@snapsi.ai</a>
       </div>
     </div>
     <div class="reveal reveal-delay-3" style="margin-top: 16px;">
@@ -2559,6 +2551,7 @@ body {
 // === NAV DOTS ===
 const sections = [
   { id: 'hero', label: 'Home' },
+  { id: 'team', label: 'Team' },
   { id: 'problem', label: 'Problem' },
   { id: 'solution', label: 'Solution' },
   { id: 'whynow', label: 'Why Now' },
@@ -2567,7 +2560,6 @@ const sections = [
   { id: 'business', label: 'Business' },
   { id: 'gtm', label: 'GTM' },
   { id: 'traction', label: 'Traction' },
-  { id: 'team', label: 'Team' },
   { id: 'ask', label: 'The Ask' },
   { id: 'vision', label: 'Vision' },
   { id: 'contact', label: 'Contact' }
