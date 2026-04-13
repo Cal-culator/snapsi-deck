@@ -1268,8 +1268,8 @@ body {
 }
 
 .team-avatar {
-  width: 80px;
-  height: 80px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   margin: 0 auto 16px;
   display: flex;
@@ -1278,6 +1278,13 @@ body {
   font-size: 28px;
   font-weight: 700;
   border: 2px solid rgba(255,255,255,0.12);
+  overflow: hidden;
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .team-card:nth-child(1) .team-avatar { background: rgba(255,255,255,0.08); color: var(--cyan); border-color: var(--cyan-dim); }
@@ -2364,19 +2371,19 @@ body {
     </div>
     <div class="team-grid">
       <div class="team-card reveal reveal-delay-1">
-        <div class="team-avatar">LC</div>
+        <div class="team-avatar"><img src="img/lizhong.jpeg" alt="Lizhong Chen"></div>
         <h3>Lizhong Chen</h3>
         <div class="team-role">Co-founder & CEO</div>
         <p class="team-bio">Expert on AI and computer architecture. <strong>Professor at Oregon State University</strong> with <strong>$30M+ in research funding</strong>. <strong>IEEE HPCA Hall of Fame</strong> inductee. <strong>NSF CAREER Awardee</strong>.</p>
       </div>
       <div class="team-card reveal reveal-delay-2">
-        <div class="team-avatar">RB</div>
+        <div class="team-avatar"><img src="img/raymond.jpeg" alt="Raymond Baartmans"></div>
         <h3>Raymond Baartmans</h3>
         <div class="team-role">Co-founder & CTO</div>
         <p class="team-bio">Expert on AI hardware accelerators. <strong>PhD candidate</strong> specializing in high-level synthesis. Experienced developer for <strong>HLS, MLIR, and design automation</strong> for FPGA and ASIC.</p>
       </div>
       <div class="team-card reveal reveal-delay-3">
-        <div class="team-avatar">VP</div>
+        <div class="team-avatar"><img src="img/calvin.jpg" alt="VP for Business"></div>
         <h3>VP for Business</h3>
         <div class="team-role">Co-founder (Hiring)</div>
         <p class="team-bio">Seeking a business co-founder to lead go-to-market strategy, enterprise sales, and partnership development in the semiconductor ecosystem.</p>
