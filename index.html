@@ -1975,27 +1975,27 @@ body {
   <div class="slide-inner">
     <div class="reveal">
       <div class="section-label">02 / The Problem</div>
-      <h2 class="section-title">Hardware can't keep up<br>with <span>AI innovation</span></h2>
+      <h2 class="section-title">The <span>model-to-hardware gap</span><br>is the new constraint</h2>
     </div>
     <div class="pain-points">
       <div class="pain-card reveal reveal-delay-1">
-        <div class="pain-icon">6+</div>
-        <h3><span class="pain-highlight">6-12 months</span> design cycles</h3>
-        <p>Hardware design cycles are painfully slow, creating a widening gap between AI model innovation and deployment.</p>
+        <div class="pain-icon">&gt;&gt;</div>
+        <h3>A <span class="pain-highlight">slow, manual</span> translation step</h3>
+        <p>AI teams building custom accelerators still face a manual translation between model design and hardware-ready architecture — taking months per iteration.</p>
       </div>
       <div class="pain-card reveal reveal-delay-2">
         <div class="pain-icon">&lt;1%</div>
-        <h3>Deep expertise <span class="pain-highlight">out of reach</span></h3>
-        <p>Custom chip design requires rare hardware expertise that most AI teams simply don't have access to.</p>
+        <h3>Limits <span class="pain-highlight">who can build</span> custom silicon</h3>
+        <p>The bottleneck makes iteration expensive, restricts custom silicon to teams with deep hardware expertise, and slows deployment into edge and specialized environments.</p>
       </div>
       <div class="pain-card reveal reveal-delay-3">
         <div class="pain-icon">!=</div>
-        <h3>Off-the-shelf <span class="pain-highlight">doesn't fit</span></h3>
-        <p>Generic GPUs and TPUs can't meet the custom latency, power, and size requirements of drones, robots, and edge AI devices.</p>
+        <h3>Models evolve <span class="pain-highlight">faster than hardware</span></h3>
+        <p>As AI models change quarterly, the model-to-hardware gap widens — making manual architecture translation the critical constraint in the deployment pipeline.</p>
       </div>
     </div>
     <div class="callout reveal reveal-delay-4">
-      AI hardware teams building edge and inference accelerators can no longer keep pace with the speed of modern AI models.
+      The bottleneck is no longer model design or fabrication — it's the <strong style="color:#fbbf24">translation step between AI model and hardware architecture</strong>.
     </div>
   </div>
 </section>
@@ -2072,40 +2072,40 @@ body {
   <div class="slide-inner">
     <div class="reveal">
       <div class="section-label">04 / Why Now</div>
-      <h2 class="section-title">A perfect storm for<br><span>AI hardware automation</span></h2>
+      <h2 class="section-title">The timing is<br><span>structural, not hype</span></h2>
     </div>
     <div class="why-grid">
       <div class="why-card reveal reveal-delay-1">
         <div class="why-num">01</div>
         <div>
-          <h3>AI outpacing hardware</h3>
-          <p>AI models are evolving <strong style="color:#fbbf24;font-weight:600">faster than manual hardware design cycles</strong> can follow.</p>
+          <h3>Model velocity exceeds hardware cycles</h3>
+          <p>AI models are changing <strong style="color:#fbbf24;font-weight:600">faster than manual hardware architecture cycles</strong> can follow — creating a growing mismatch.</p>
         </div>
       </div>
       <div class="why-card reveal reveal-delay-2">
         <div class="why-num">02</div>
         <div>
-          <h3>Edge demands custom silicon</h3>
-          <p>Edge and inference workloads require <strong style="color:#fbbf24;font-weight:600">purpose-built chips</strong> that generic solutions can't deliver.</p>
+          <h3>Edge and specialized inference</h3>
+          <p>Edge and specialized inference create stronger demand for <strong style="color:#fbbf24;font-weight:600">custom silicon</strong> that general-purpose chips can't serve.</p>
         </div>
       </div>
       <div class="why-card reveal reveal-delay-3">
         <div class="why-num">03</div>
         <div>
-          <h3>Government tailwinds</h3>
-          <p><strong style="color:#fbbf24;font-weight:600">CHIPS Act, DoD</strong>, and government AI programs are fueling unprecedented investment in custom chip development.</p>
+          <h3>Ecosystem investment</h3>
+          <p><strong style="color:#fbbf24;font-weight:600">CHIPS Act, DoD</strong>, and semiconductor ecosystem investment make new infrastructure layers more fundable than ever.</p>
         </div>
       </div>
       <div class="why-card reveal reveal-delay-4">
         <div class="why-num">04</div>
         <div>
-          <h3>EDA tipping point</h3>
-          <p>AI-focused electronic design automation has reached a <strong style="color:#fbbf24;font-weight:600">tipping point</strong>, making model-level automation viable.</p>
+          <h3>Design complexity demands automation</h3>
+          <p>AI-era design complexity increases the need for <strong style="color:#fbbf24;font-weight:600">model-level hardware automation</strong> — manual approaches no longer scale.</p>
         </div>
       </div>
     </div>
     <div class="callout reveal reveal-delay-5">
-      These forces make model-level automation <strong style="color:#fbbf24;font-weight:600">inevitable</strong> in AI hardware design.
+      These are <strong style="color:#fbbf24;font-weight:600">structural forces</strong>, not trends — they make model-to-hardware automation an infrastructure inevitability.
     </div>
   </div>
 </section>
@@ -2421,14 +2421,20 @@ body {
       <div class="roadmap-h">
         <div class="roadmap-step">
           <div class="roadmap-dot done"></div>
-          <h4>POC completed</h4>
-          <p>Core technology validated end-to-end</p>
+          <h4>Research validated</h4>
+          <p>Core approach and Architecture IR design proven</p>
         </div>
         <div class="roadmap-line"></div>
         <div class="roadmap-step">
           <div class="roadmap-dot"></div>
-          <h4>MVP in 6 months</h4>
-          <p>Core compilation pipeline functional</p>
+          <h4>Prototype in ~4 months</h4>
+          <p>End-to-end model-to-SystemC pipeline</p>
+        </div>
+        <div class="roadmap-line"></div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot"></div>
+          <h4>MVP in ~8 months</h4>
+          <p>Customer-ready tool with FPGA target</p>
         </div>
         <div class="roadmap-line"></div>
         <div class="roadmap-step">
