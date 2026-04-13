@@ -1975,27 +1975,27 @@ body {
   <div class="slide-inner">
     <div class="reveal">
       <div class="section-label">02 / The Problem</div>
-      <h2 class="section-title">The <span>model-to-hardware gap</span><br>is the new constraint</h2>
+      <h2 class="section-title">The <span>model-to-hardware translation</span><br>is too slow, manual, and constrained</h2>
     </div>
     <div class="pain-points">
       <div class="pain-card reveal reveal-delay-1">
         <div class="pain-icon">&gt;&gt;</div>
-        <h3>A <span class="pain-highlight">slow, manual</span> translation step</h3>
-        <p>AI teams building custom accelerators still face a manual translation between model design and hardware-ready architecture — taking months per iteration.</p>
+        <h3><span class="pain-highlight">Months</span> per iteration</h3>
+        <p>AI teams building custom accelerators still face a slow, manual translation step between model design and hardware-ready architecture.</p>
       </div>
       <div class="pain-card reveal reveal-delay-2">
         <div class="pain-icon">&lt;1%</div>
-        <h3>Limits <span class="pain-highlight">who can build</span> custom silicon</h3>
-        <p>The bottleneck makes iteration expensive, restricts custom silicon to teams with deep hardware expertise, and slows deployment into edge and specialized environments.</p>
+        <h3><span class="pain-highlight">Expensive</span> and expertise-gated</h3>
+        <p>The bottleneck makes iteration costly, limits custom silicon to teams with rare hardware expertise, and slows deployment into edge and specialized environments.</p>
       </div>
       <div class="pain-card reveal reveal-delay-3">
         <div class="pain-icon">!=</div>
-        <h3>Models evolve <span class="pain-highlight">faster than hardware</span></h3>
-        <p>As AI models change quarterly, the model-to-hardware gap widens — making manual architecture translation the critical constraint in the deployment pipeline.</p>
+        <h3>A <span class="pain-highlight">widening</span> gap</h3>
+        <p>As AI models evolve faster, the model-to-hardware gap becomes the binding constraint — not model design, not fabrication, but the architecture translation in between.</p>
       </div>
     </div>
     <div class="callout reveal reveal-delay-4">
-      The bottleneck is no longer model design or fabrication — it's the <strong style="color:#fbbf24">translation step between AI model and hardware architecture</strong>.
+      The translation from AI model to <strong style="color:#fbbf24">hardware-ready architecture</strong> is still too slow, manual, and expertise-constrained.
     </div>
   </div>
 </section>
@@ -2177,8 +2177,8 @@ body {
   <div class="grid-bg"></div>
   <div class="slide-inner">
     <div class="reveal">
-      <div class="section-label">06 / Competitive Advantage</div>
-      <h2 class="section-title">The only tool with <span>all three</span>:<br>automated, effective, reliable</h2>
+      <div class="section-label">06 / Competitive Landscape</div>
+      <h2 class="section-title">SnapSi occupies a <span>new layer</span><br>in the hardware design stack</h2>
     </div>
     <div class="comp-layout">
       <!-- Quadrant -->
@@ -2332,12 +2332,12 @@ body {
       </div>
       <div class="biz-card reveal reveal-delay-3">
         <div class="biz-type">Entry Motion</div>
-        <h3>Paid Pilots</h3>
-        <div class="biz-price">$50K-250K<span style="font-size:16px;color:var(--text-muted);font-weight:400">/project</span></div>
+        <h3>Technical Evaluations</h3>
+        <div class="biz-price">$50K-250K<span style="font-size:16px;color:var(--text-muted);font-weight:400">/eval</span></div>
         <ul>
-          <li>Project-based engagements</li>
-          <li>4-8 week pilot programs</li>
-          <li>Converts to annual license</li>
+          <li>4-8 week scoped validation engagements</li>
+          <li>Success criteria: model fit, workflow fit, ROI</li>
+          <li>Designed to convert into annual licenses</li>
         </ul>
       </div>
     </div>
@@ -2369,9 +2369,9 @@ body {
           <li>Target teams already using <span class="phase-highlight">Catapult, Vitis HLS, Intel HLS</span></li>
           <li>Prioritize outreach to <span class="phase-highlight">63 companies</span> building custom AI accelerators</li>
           <li><span class="phase-highlight">17 targets</span> in the <span class="phase-highlight">Oregon FAST</span> semiconductor ecosystem</li>
-          <li>Initial verticals: aerospace, edge devices, telecom, industrial vision</li>
-          <li>Goal: <span class="phase-highlight">8-15 paid pilots</span> by end of seed</li>
-          <li>Typical motion: 4-8 weeks pilot to annual license + support</li>
+          <li>Initial champion: <span class="phase-highlight">AI hardware architect / HLS lead</span> evaluating a specific model-to-hardware path</li>
+          <li>Entry motion: <span class="phase-highlight">customer-specific technical evaluation</span> using an existing workload</li>
+          <li>Goal: <span class="phase-highlight">8-15 design-partner evaluations</span> by end of seed</li>
         </ul>
       </div>
       <div class="phase-card reveal reveal-delay-2">
@@ -2421,26 +2421,20 @@ body {
       <div class="roadmap-h">
         <div class="roadmap-step">
           <div class="roadmap-dot done"></div>
-          <h4>Research validated</h4>
-          <p>Core approach and Architecture IR design proven</p>
+          <h4>Internal prototype completed</h4>
+          <p>Core technical path validated end-to-end</p>
         </div>
         <div class="roadmap-line"></div>
         <div class="roadmap-step">
           <div class="roadmap-dot"></div>
-          <h4>Prototype in ~4 months</h4>
-          <p>End-to-end model-to-SystemC pipeline</p>
+          <h4>Customer-deployable MVP</h4>
+          <p>~6 months — scoped tool with FPGA target</p>
         </div>
         <div class="roadmap-line"></div>
         <div class="roadmap-step">
           <div class="roadmap-dot"></div>
-          <h4>MVP in ~8 months</h4>
-          <p>Customer-ready tool with FPGA target</p>
-        </div>
-        <div class="roadmap-line"></div>
-        <div class="roadmap-step">
-          <div class="roadmap-dot"></div>
-          <h4>Production in 12-18 months</h4>
-          <p>Full FPGA & ASIC target support</p>
+          <h4>Broader production support</h4>
+          <p>12-18 months — full FPGA & ASIC targets</p>
         </div>
       </div>
     </div>
@@ -2518,7 +2512,7 @@ body {
         </ul>
         <div style="margin-top: 24px;">
           <div class="callout" style="font-size: 14px;">
-            This round funds us through production-ready release, customer pilots, and Series-A readiness.
+            This round funds prototype hardening, MVP completion, design-partner evaluations, and initial pilot readiness.
           </div>
         </div>
       </div>
