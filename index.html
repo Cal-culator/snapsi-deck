@@ -1187,16 +1187,16 @@ body {
 .traction-signals {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 36px;
-  margin-bottom: 36px;
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .signal-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 28px 24px;
+  padding: 20px 20px;
   transition: border-color 0.3s, transform 0.3s;
 }
 
@@ -1216,7 +1216,7 @@ body {
 
 .signal-amount {
   font-family: var(--font-mono);
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
   color: #fbbf24;
   line-height: 1;
@@ -1239,16 +1239,16 @@ body {
 }
 
 .signal-source {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .signal-desc {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .roadmap-h {
@@ -2442,12 +2442,12 @@ body {
       <div class="signal-card signal-grant">
         <div class="signal-amount">$50K</div>
         <div class="signal-source">Silicon Forest Partnership</div>
-        <div class="signal-desc">Startup Award — validating market need and technical approach in the Oregon semiconductor ecosystem</div>
+        <div class="signal-desc">Startup Award — validating market need and technical approach</div>
       </div>
       <div class="signal-card">
         <div class="signal-icon done-icon"></div>
         <div class="signal-source">Customer Commitment</div>
-        <div class="signal-desc">Design commitment received from a computer vision startup</div>
+        <div class="signal-desc">Design commitment from a computer vision startup</div>
       </div>
       <div class="signal-card">
         <div class="signal-icon done-icon"></div>
@@ -2457,7 +2457,7 @@ body {
     </div>
     <!-- Horizontal Roadmap -->
     <div class="reveal reveal-delay-2">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;">Product Roadmap</div>
+      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px;">Product Roadmap</div>
       <div class="roadmap-h">
         <div class="roadmap-step">
           <div class="roadmap-dot done"></div>
@@ -2479,8 +2479,8 @@ body {
       </div>
     </div>
     <!-- Benchmarks -->
-    <div class="reveal reveal-delay-3" style="margin-top:28px;">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;">Early Benchmarks — MobileNetV1 Model</div>
+    <div class="reveal reveal-delay-3" style="margin-top:20px;">
+      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">Early Benchmarks — MobileNetV1 Model</div>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
         <li style="font-size:14px;color:var(--text-secondary);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#fbbf24;">&#9656;</span> Architecture IR + synthesizable SystemC generated in <strong style="color:#fbbf24">20 minutes</strong> — vs. 1-2 months with Vitis HLS, 4-8 months for manual RTL</li>
         <li style="font-size:14px;color:var(--text-secondary);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#fbbf24;">&#9656;</span> <strong style="color:#fbbf24">20x latency improvement</strong> and <strong style="color:#fbbf24">25x BRAM efficiency</strong> vs. state-of-the-art research tools, optimized within FPGA resource constraints</li>
