@@ -781,8 +781,8 @@ body {
   letter-spacing: 1px;
 }
 
-.ql-top { top: 4px; left: 50%; transform: translateX(-50%); }
-.ql-bottom { bottom: 4px; left: 50%; transform: translateX(-50%); }
+.ql-top { top: 0; left: 50%; transform: translate(-50%, -100%); }
+.ql-bottom { bottom: 0; left: 50%; transform: translate(-50%, 100%); }
 .ql-left { left: 4px; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: left center; }
 .ql-right { right: 4px; top: 50%; transform: translateY(-50%) rotate(90deg); transform-origin: right center; }
 
@@ -818,6 +818,60 @@ body {
 }
 
 .quad-name.snapsi { color: #fbbf24; font-weight: 700; font-size: 14px; }
+
+.ql-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 14px);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.quad-group {
+  position: absolute;
+  border: 1.5px solid #6b8cd9;
+  border-radius: 50%;
+  padding: 14px 26px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.quad-group-label {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  color: #6b8cd9;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+
+.quad-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #6b8cd9;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+}
+
+.quad-item-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6b8cd9;
+  flex-shrink: 0;
+}
 
 /* Comparison table */
 .comp-table {
@@ -2222,56 +2276,51 @@ body {
           <div class="quad-axis quad-axis-x"></div>
           <div class="quad-axis quad-axis-y"></div>
           <div class="quad-label ql-top">High-quality RTL</div>
-          <div class="quad-label ql-bottom">Low-quality / No RTL</div>
-          <div class="quad-label ql-left">Manual</div>
+          <div class="quad-label ql-middle">Low-quality RTL</div>
+          <div class="quad-label ql-bottom">No RTL</div>
+          <div class="quad-label ql-left">Manual (SystemC)</div>
           <div class="quad-label ql-right">Automated</div>
-          <!-- SnapSi -->
-          <div class="quad-point" style="top: 12%; left: 72%;">
+
+          <!-- "Better" diagonal arrow -->
+          <svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+                <polygon points="0 0, 6 2, 0 4" fill="var(--text-muted)" opacity="0.35"/>
+              </marker>
+            </defs>
+            <line x1="18" y1="82" x2="72" y2="22" stroke="var(--text-muted)" stroke-width="0.8" opacity="0.3" marker-end="url(#arrowhead)"/>
+            <text x="42" y="52" transform="rotate(-48 42 52)" font-family="var(--font-mono)" font-size="3.5" fill="var(--text-muted)" opacity="0.55" font-style="italic">Better</text>
+          </svg>
+
+          <!-- SnapSi (standalone, top-right) -->
+          <div class="quad-point" style="top: 12%; left: 78%; z-index: 2;">
             <div class="quad-dot snapsi"></div>
             <div class="quad-name snapsi">SnapSi</div>
           </div>
-          <!-- Standard HLS tools -->
-          <div class="quad-point" style="top: 22%; left: 25%;">
-            <div class="quad-dot"></div>
-            <div class="quad-name">Catapult HLS</div>
+
+          <!-- Standard HLS tools group (top-left) -->
+          <div class="quad-group" style="top: 30%; left: 25%;">
+            <div class="quad-group-label">Standard HLS tools</div>
+            <div class="quad-item"><span class="quad-item-dot"></span>Catapult HLS</div>
+            <div class="quad-item"><span class="quad-item-dot"></span>Vivado/Vitis HLS</div>
+            <div class="quad-item"><span class="quad-item-dot"></span>Intel HLS Compiler</div>
           </div>
-          <div class="quad-point" style="top: 30%; left: 20%;">
-            <div class="quad-dot"></div>
-            <div class="quad-name">Vivado/Vitis HLS</div>
+
+          <!-- Exploratory and academic tools (mid-right) -->
+          <div class="quad-group" style="top: 62%; left: 72%;">
+            <div class="quad-item"><span class="quad-item-dot"></span>Exploratory &amp; academic tools</div>
           </div>
-          <div class="quad-point" style="top: 28%; left: 32%;">
-            <div class="quad-dot"></div>
-            <div class="quad-name">Intel HLS</div>
+
+          <!-- LLM Agents (lower-right) -->
+          <div class="quad-group" style="top: 78%; left: 75%;">
+            <div class="quad-item"><span class="quad-item-dot"></span>LLM Agents</div>
           </div>
-          <!-- Exploratory -->
-          <div class="quad-point" style="top: 58%; left: 58%;">
-            <div class="quad-dot"></div>
-            <div class="quad-name">Academic tools</div>
+
+          <!-- Xilinx Vitis AI / Intel OpenVINO (bottom-right) -->
+          <div class="quad-group" style="top: 90%; left: 70%;">
+            <div class="quad-item"><span class="quad-item-dot"></span>Xilinx Vitis AI</div>
+            <div class="quad-item"><span class="quad-item-dot"></span>Intel OpenVINO</div>
           </div>
-          <!-- LLM Agents -->
-          <div class="quad-point" style="top: 68%; left: 65%;">
-            <div class="quad-dot"></div>
-            <div class="quad-name">LLM Agents</div>
-          </div>
-          <!-- Vendor tools -->
-          <div class="quad-point" style="top: 80%; left: 60%;">
-            <div class="quad-dot"></div>
-            <div class="quad-name">Xilinx Vitis AI</div>
-          </div>
-          <div class="quad-point" style="top: 82%; left: 52%;">
-            <div class="quad-dot"></div>
-            <div class="quad-name">Intel OpenVINO</div>
-          </div>
-          <!-- "Better" arrow -->
-          <svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;" viewBox="0 0 100 100">
-            <defs>
-              <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="0" refY="2" orient="auto">
-                <polygon points="0 0, 6 2, 0 4" fill="var(--text-muted)" opacity="0.3"/>
-              </marker>
-            </defs>
-            <line x1="42" y1="62" x2="62" y2="22" stroke="var(--text-muted)" stroke-width="0.5" opacity="0.2" marker-end="url(#arrowhead)"/>
-            <text x="48" y="38" transform="rotate(-55 48 38)" font-family="var(--font-mono)" font-size="3" fill="var(--text-muted)" opacity="0.3">Better</text>
-          </svg>
         </div>
       </div>
       <!-- Table -->
