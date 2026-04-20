@@ -137,6 +137,20 @@ body {
   padding: 60px 60px;
 }
 
+.slide::after {
+  content: 'Company confidential';
+  position: absolute;
+  bottom: 20px;
+  left: 60px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  z-index: 10;
+}
+
 .slide-inner {
   max-width: 1200px;
   width: 100%;
